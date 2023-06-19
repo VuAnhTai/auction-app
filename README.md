@@ -1,21 +1,23 @@
-## Remi Frontend
+## Auction Frontend
 
-- Youtube Video Sharing App
+- Online Auction App
 
 ## Description
 
-- Purpose: This project is to build a video sharing app like Youtube.
+- Purpose: This project is to build an online auction system.
 - Overview: This project is built with NextJS, ReactJS, TailwindCSS, SocketIO, and Cypress.
 - Key Feature:
   - User can register, login, logout, and update profile.
-  - User can share video from Youtube by providing video link.
-  - User can like, dislike, comment, and reply to a video.
-  - Notification when someone shares a video.
+  - Create a new item.
+  - Get the list of completed/ongoing bid items.
+  - Bid on an item.
+  - Can bid in each 5s and for published items (each user).
+  - After bid time. fail auction user’s money need to be payback.
 
 # Make sure you prepare API for app
 
-Contact with vuanhtai1997@gmail.com to get source API and run it on your local machine.
-or you can change NEXT_PUBLIC_API_URI in .env file to https://api.vat-info.online
+Contact with taivu180597@gmail.com to get source API and run it on your local machine.
+or you can change NEXT_PUBLIC_API_URI in .env file to https://api-auction.vat-info.online
 
 ## Reference
 
@@ -34,13 +36,14 @@ https://github.com/airbnb/javascript/tree/master/react
 
 ## Install
 
-````bash
-## Add package
 ```bash
+# Install node_modules
+`npm install`
+## Add package
 `npm install <package>`
 # for dev
 `npm install <dev_package> --save-dev
-````
+```
 
 ## For develop
 
@@ -48,7 +51,6 @@ https://github.com/airbnb/javascript/tree/master/react
 # 1. Change .env.example => .env
 # 2. Run local API or change NEXT_PUBLIC_API_URI
 # 3. Start app with dev
-`npm install`
 `npm run dev`
 ```
 
@@ -58,7 +60,6 @@ https://github.com/airbnb/javascript/tree/master/react
 # 1. Change .env.example => .env
 # 2. Run local API or change NEXT_PUBLIC_API_URI
 # 3. Build app
-`npm install`
 `npm run build`
 # 4. Start app with start
 `npm run start`

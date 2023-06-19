@@ -1,30 +1,11 @@
 import Head from 'next/head';
 import { type Children } from '../common/types';
 import Navbar from '../navbar';
-import { useSocket } from '@/common/hooks/useSocket';
-import { EVENT_SOCKET, type EventValues } from '@/common/constants';
-import { useCallback } from 'react';
+import { AuthProvider } from '@/common/hooks/useAuth';
 
-type Props = {
-  onSuccess?: () => void;
-};
+type Props = {};
 
-const PrivateLayout = ({ children, onSuccess }: Props & Children) => {
-  const on = useCallback(
-    (event: EventValues, data: any) => {
-      switch (event) {
-        case EVENT_SOCKET.NOTIFICATION:
-          onSuccess?.();
-          break;
-        default:
-          break;
-      }
-    },
-    [onSuccess]
-  );
-
-  useSocket({ on });
-
+const PrivateLayout = ({ children }: Props & Children) => {
   return (
     <>
       <Head>
@@ -33,8 +14,10 @@ const PrivateLayout = ({ children, onSuccess }: Props & Children) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/images/favicon.ico' />
       </Head>
-      <Navbar onSuccess={onSuccess} />
-      <main className='flex-grow'>{children}</main>
+      <Navbar />
+      <main className='flex-grow container m-auto'>
+        <AuthProvider>{children}</AuthProvider>
+      </main>
     </>
   );
 };
