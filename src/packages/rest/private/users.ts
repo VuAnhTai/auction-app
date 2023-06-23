@@ -1,9 +1,16 @@
 import type { User } from '@/common/types';
-import { LocalStorageUtils } from '@/packages/common/utils';
-import { ACCESS_TOKEN_KEY, API_URI } from '@/packages/env/constants';
+import { API_URI } from '@/packages/env/constants';
 import { RestApis } from '../apis';
 
-const token = LocalStorageUtils.get(ACCESS_TOKEN_KEY);
+export const getProfileApi = async (): Promise<any> => {
+  try {
+    const res = await RestApis.get(`${API_URI}/users/profile`);
+    return res;
+  } catch (e) {
+    console.log('getProfileApi error: ', e);
+    return null;
+  }
+};
 
 export const depositApi = async (data: Partial<User>): Promise<any> => {
   try {

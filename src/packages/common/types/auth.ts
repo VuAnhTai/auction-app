@@ -11,5 +11,7 @@ export type LoginResponse = {
 };
 
 export type Profile = {
+  id: number;
   email: string;
+  amount: number;
 };

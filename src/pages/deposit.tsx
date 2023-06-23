@@ -8,7 +8,11 @@ import PrivateLayout from '@/layout/PrivateLayout';
 
 export default function DepositPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      amount: 0,
+    },
+  });
 
   const onSubmit = async (data: any) => {
     await depositApi(data);

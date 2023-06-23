@@ -1,5 +1,5 @@
 import { useAuth } from '@/packages/common/hooks/useAuth';
-import { registerApi } from '@/packages/rest/public/auth';
+import { registerApi } from '@/rest/public/auth';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 

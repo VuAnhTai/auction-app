@@ -1,11 +1,13 @@
 import { TypeEnum, type Item } from '@/common/types';
-import React from 'react';
+import { use } from 'chai';
+import React, { useCallback, useEffect } from 'react';
 import Countdown from 'react-countdown';
 
 type Props = {
   data: Item[];
   onClickBid: (item: Item) => void;
   onClickPublish: (item: Item) => void;
+  onRefresh: () => void;
 };
 
 const renderer = ({
@@ -33,6 +35,11 @@ const renderer = ({
 };
 
 export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
+  const [items, setItems] = React.useState<Item[]>(data);
+  useEffect(() => {
+    setItems(data);
+  }, [data]);
+
   const handleBid = (item: Item) => {
     onClickBid(item);
   };
@@ -40,6 +47,22 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
   const handlePublish = (item: Item) => {
     onClickPublish(item);
   };
+
+  const handleComplete = useCallback(
+    (id: number) => {
+      const newItems = items.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            type: TypeEnum.COMPLETED,
+          };
+        }
+        return item;
+      });
+      setItems(newItems);
+    },
+    [items]
+  );
 
   return (
     <table className='table-auto w-full'>
@@ -52,8 +75,8 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {data.length ? (
-          data.map((item, index) => {
+        {items.length ? (
+          items.map((item, index) => {
             return (
               <tr className='border-b' key={index}>
                 <td className='px-4 py-2'>{item.name}</td>
@@ -68,17 +91,25 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
                       Publish
                     </button>
                   ) : (
-                    <Countdown date={Date.now() + item.duration * 1000} renderer={renderer} />
+                    <Countdown
+                      date={Date.now() + item.duration * 1000}
+                      renderer={renderer}
+                      onComplete={() => {
+                        handleComplete(item.id);
+                      }}
+                    />
                   )}
                 </td>
                 <td className='px-4 py-2'>
-                  <button
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4'
-                    onClick={() => {
-                      handleBid(item);
-                    }}>
-                    Bid
-                  </button>
+                  {item.type === TypeEnum.PUBLISHED ? (
+                    <button
+                      className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4'
+                      onClick={() => {
+                        handleBid(item);
+                      }}>
+                      Bid
+                    </button>
+                  ) : null}
                 </td>
               </tr>
             );

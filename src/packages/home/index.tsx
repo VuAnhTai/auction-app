@@ -1,4 +1,3 @@
-import { AuthProvider } from '@/packages/common/hooks/useAuth';
 import { useCallback, useState } from 'react';
 import { type Item, TypeFilter } from '@/packages/common/types/item';
 import { useControlModal } from '@/packages/common/hooks/useModal';
@@ -14,7 +13,7 @@ import { ListItem } from './ListItems';
 export const Home = () => {
   const { toastError } = useToast();
   const [filter, setFilter] = useState<TypeFilter>();
-  const { data: listItem } = useSWR<Item[]>(`/items/${filter}`, () => {
+  const { data: listItem, mutate } = useSWR<Item[]>(`/items/${filter}`, () => {
     return getListItemApi(filter);
   });
   const { isOpen, openModal, closeModal } = useControlModal();
@@ -53,15 +52,24 @@ export const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handlePublish = useCallback(async (item: Item) => {
-    await publishItemApi(item.id);
-  }, []);
+  const handlePublish = useCallback(
+    async (item: Item) => {
+      await publishItemApi(item.id);
+      mutate();
+    },
+    [mutate]
+  );
 
   return (
     <>
       <div className='container m-auto'>
         <Filter onFilter={onFilter}></Filter>
-        <ListItem data={listItem || []} onClickBid={handleBid} onClickPublish={handlePublish} />
+        <ListItem
+          data={listItem || []}
+          onClickBid={handleBid}
+          onClickPublish={handlePublish}
+          onRefresh={mutate}
+        />
       </div>
       <Modal isOpen={isOpen}>
         <h2 className='text-lg font-medium mb-6'>Bid {itemSelected?.name}</h2>

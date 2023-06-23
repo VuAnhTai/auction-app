@@ -7,7 +7,7 @@ import { Icon } from '@/common/headless/Icon';
 
 const Navbar = () => {
   const { logout } = useAuth();
-  const { email } = useProfile();
+  const profile = useProfile();
   const [isOpenMobile, setIsOpen] = useState(false);
 
   return (
@@ -20,7 +20,10 @@ const Navbar = () => {
             </div>
             <div className='hidden lg:block'>
               <div className='flex items-center md:ml-6 gap-3'>
-                <div data-testid='email'>Welcome {email}</div>
+                <div data-testid='email'>{profile?.email}</div>
+                <div data-testid='amount' style={{ whiteSpace: 'nowrap' }}>
+                  Balance: {profile?.amount}
+                </div>
                 <Link
                   href='/item'
                   className='w-full text-center block px-4 py-2 text-sm bg-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 rounded-md'>
@@ -40,7 +43,8 @@ const Navbar = () => {
               </div>
             </div>
             <div className='-mr-2 flex lg:hidden items-center gap-3'>
-              <div>Welcome {email}</div>
+              <div data-testid='email-mb'>Welcome {profile?.email}</div>
+              <div data-testid='amount-mb'>Balance: {profile?.amount}</div>
               <button
                 onClick={() => setIsOpen(!isOpenMobile)}
                 className='bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
