@@ -1,6 +1,6 @@
 ## Frontend
 
-- Online App
+- Online App (https://auction-app-vat.vercel.app)
 
 ## Description
 
@@ -17,7 +17,7 @@
 # Make sure you prepare API for app
 
 Contact with taivu180597@gmail.com to get source API and run it on your local machine.
-or you can change NEXT_PUBLIC_API_URI in .env file to https://api-.vat-info.online
+or you can change NEXT_PUBLIC_API_URI in .env file to https://api.vat-info.online
 
 ## Reference
 
@@ -58,7 +58,10 @@ https://github.com/airbnb/javascript/tree/master/react
 
 ```bash
 # 1. Change .env.example => .env
-# 2. Run local API or change NEXT_PUBLIC_API_URI
+# 2. Run local API
+`NEXT_PUBLIC_API_URI=http://localhost:4000`
+# or using API online
+`NEXT_PUBLIC_API_URI=https://api.vat-info.online`
 # 3. Build app
 `npm run build`
 # 4. Start app with start
