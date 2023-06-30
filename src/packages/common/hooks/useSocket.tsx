@@ -12,7 +12,7 @@ type Socket = {
 
 export const useSocket = ({ on }: Socket) => {
   const { toastInfo } = useToast();
-  const { email } = useProfile();
+  const profile = useProfile();
   const token = useMemo(() => LocalStorageUtils.get(ACCESS_TOKEN_KEY), []);
   useEffect(() => {
     const socket = createSocket(token as string);
@@ -23,5 +23,5 @@ export const useSocket = ({ on }: Socket) => {
     return () => {
       socket.disconnect();
     };
-  }, [email, on, toastInfo, token]);
+  }, [profile, on, toastInfo, token]);
 };

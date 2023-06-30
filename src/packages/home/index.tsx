@@ -39,6 +39,7 @@ export const Home = () => {
     try {
       await bidItemApi(itemSelected?.id, data);
       closeModal();
+      mutate();
     } catch (error: any) {
       toastError(error.message);
     } finally {

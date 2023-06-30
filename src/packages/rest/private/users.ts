@@ -7,7 +7,6 @@ export const getProfileApi = async (): Promise<any> => {
     const res = await RestApis.get(`${API_URI}/users/profile`);
     return res;
   } catch (e) {
-    console.log('getProfileApi error: ', e);
     return null;
   }
 };

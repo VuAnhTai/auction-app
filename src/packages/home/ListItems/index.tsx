@@ -1,5 +1,5 @@
+import { useProfile } from '@/auth/useProfile';
 import { TypeEnum, type Item } from '@/common/types';
-import { use } from 'chai';
 import React, { useCallback, useEffect } from 'react';
 import Countdown from 'react-countdown';
 
@@ -36,6 +36,7 @@ const renderer = ({
 
 export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
   const [items, setItems] = React.useState<Item[]>(data);
+  const user = useProfile();
   useEffect(() => {
     setItems(data);
   }, [data]);
@@ -55,6 +56,7 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
           return {
             ...item,
             type: TypeEnum.COMPLETED,
+            duration: 0,
           };
         }
         return item;
@@ -101,7 +103,9 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
                   )}
                 </td>
                 <td className='px-4 py-2'>
-                  {item.type === TypeEnum.PUBLISHED ? (
+                  {item.type === TypeEnum.PUBLISHED &&
+                  +item.owner.id != user?.id &&
+                  item.createdBy != user?.id ? (
                     <button
                       className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4'
                       onClick={() => {

@@ -19,4 +19,5 @@ export type Item = {
     id: number;
     email: string;
   };
+  createdBy: number;
 };
