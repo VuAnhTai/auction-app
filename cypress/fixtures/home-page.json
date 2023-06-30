@@ -2,15 +2,20 @@
   "locator": {
     "logo": "logo",
     "email": "email",
-    "share_video": "share-video",
-    "share_video_mb": "share-video-mb",
+    "email_mb": "email-mb",
+    "amount": "amount",
+    "amount_mb": "amount-mb",
+    "create_item": "create-item",
+    "create_item_mb": "create-item-mb",
+    "deposit": "deposit",
+    "deposit_mb": "deposit-mb",
     "signout": "signout",
     "signout_mb": "signout-mb",
     "toggle_menu": "toggle-menu",
     "item": "item"
   },
   "labels": {
-    "logo": "MOVIES FUNNY",
+    "logo": "VAT",
     "email": "Email address",
     "share_video": "Share video",
     "signout": "Sign out"

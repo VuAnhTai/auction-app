@@ -80,7 +80,7 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
         {items.length ? (
           items.map((item, index) => {
             return (
-              <tr className='border-b' key={index}>
+              <tr className='border-b' key={index} data-testid='item'>
                 <td className='px-4 py-2'>{item.name}</td>
                 <td className='px-4 py-2'>{item.currentPrice}</td>
                 <td className='px-4 py-2'>

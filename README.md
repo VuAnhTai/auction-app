@@ -1,10 +1,10 @@
-## Auction Frontend
+## Frontend
 
-- Online Auction App
+- Online App
 
 ## Description
 
-- Purpose: This project is to build an online auction system.
+- Purpose: This project is to build an online system.
 - Overview: This project is built with NextJS, ReactJS, TailwindCSS, SocketIO, and Cypress.
 - Key Feature:
   - User can register, login, logout, and update profile.
@@ -12,12 +12,12 @@
   - Get the list of completed/ongoing bid items.
   - Bid on an item.
   - Can bid in each 5s and for published items (each user).
-  - After bid time. fail auction user’s money need to be payback.
+  - After bid time. fail user’s money need to be payback.
 
 # Make sure you prepare API for app
 
 Contact with taivu180597@gmail.com to get source API and run it on your local machine.
-or you can change NEXT_PUBLIC_API_URI in .env file to https://api-auction.vat-info.online
+or you can change NEXT_PUBLIC_API_URI in .env file to https://api-.vat-info.online
 
 ## Reference
 

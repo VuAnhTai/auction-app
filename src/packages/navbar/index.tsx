@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className='mx-auto container'>
           <div className='flex items-center justify-between h-16 text-white'>
             <div className='flex-shrink-0 text-4xl' data-testid='logo'>
-              VAT Auction
+              VAT
             </div>
             <div className='hidden lg:block'>
               <div className='flex items-center md:ml-6 gap-3'>
@@ -26,18 +26,21 @@ const Navbar = () => {
                 </div>
                 <Link
                   href='/item'
-                  className='w-full text-center block px-4 py-2 text-sm bg-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 rounded-md'>
+                  className='w-full text-center block px-4 py-2 text-sm bg-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 rounded-md'
+                  data-testid='create-item'>
                   Create New Item
                 </Link>
                 <Link
                   href='/deposit'
-                  className='w-full text-center block px-4 py-2 text-sm bg-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 rounded-md'>
+                  className='w-full text-center block px-4 py-2 text-sm bg-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 rounded-md'
+                  data-testid='deposit'>
                   Deposit
                 </Link>
                 <Link
                   onClick={logout}
                   className='text-center block px-4 py-2 text-sm bg-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 rounded-md'
-                  href={''}>
+                  href={''}
+                  data-testid='signout'>
                   <Icon name='sign-out' height={'1.25em'} />
                 </Link>
               </div>
@@ -64,18 +67,21 @@ const Navbar = () => {
                   <div className='py-1 bg-white rounded-md shadow-xs'>
                     <Link
                       href='/item'
-                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                      data-testid='create-item-mb'>
                       Create New Item
                     </Link>
                     <Link
                       href='/deposit'
-                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
+                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                      data-testid='deposit-mb'>
                       Deposit
                     </Link>
                     <Link
                       onClick={logout}
                       className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-                      href={''}>
+                      href={''}
+                      data-testid='signout-mb'>
                       Sign out
                     </Link>
                   </div>

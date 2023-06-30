@@ -1,0 +1,110 @@
+[
+  {
+    "id": 9,
+    "name": "Tai",
+    "startPrice": 1,
+    "currentPrice": 1,
+    "startDate": "2023-06-30T09:29:12.837Z",
+    "endDate": "2023-06-30T09:30:52.837Z",
+    "duration": -16172,
+    "status": "active",
+    "type": "published",
+    "owner": { "id": 1, "email": "vuanhtai1997@gmail.com" }
+  },
+  {
+    "id": 8,
+    "name": "Vu Anh Tai",
+    "startPrice": 1,
+    "currentPrice": 1,
+    "startDate": "2023-06-30T09:28:17.874Z",
+    "endDate": "2023-06-30T09:28:27.874Z",
+    "duration": -16317,
+    "status": "active",
+    "type": "completed",
+    "owner": { "id": 1, "email": "vuanhtai1997@gmail.com" }
+  },
+  {
+    "id": 7,
+    "name": "Test",
+    "startPrice": 1,
+    "currentPrice": 1000,
+    "startDate": "2023-06-28T10:30:27.373Z",
+    "endDate": "2023-06-28T10:30:37.373Z",
+    "duration": -185388,
+    "status": "active",
+    "type": "completed",
+    "owner": { "id": 1, "email": "vuanhtai1997@gmail.com" }
+  },
+  {
+    "id": 6,
+    "name": "Tét",
+    "startPrice": 1,
+    "currentPrice": 6000,
+    "startDate": "2023-06-28T10:29:06.934Z",
+    "endDate": "2023-06-28T10:30:06.934Z",
+    "duration": -185418,
+    "status": "active",
+    "type": "published",
+    "owner": { "id": 1, "email": "vuanhtai1997@gmail.com" }
+  },
+  {
+    "id": 5,
+    "name": "Test",
+    "startPrice": 1,
+    "currentPrice": 1,
+    "startDate": "2023-06-28T10:28:08.993Z",
+    "endDate": "2023-06-28T10:28:48.993Z",
+    "duration": -185496,
+    "status": "active",
+    "type": "completed",
+    "owner": { "id": 2, "email": "tai@coderpush.com" }
+  },
+  {
+    "id": 4,
+    "name": "Test",
+    "startPrice": 1,
+    "currentPrice": 40000,
+    "startDate": "2023-06-28T10:25:48.225Z",
+    "endDate": "2023-06-28T10:26:48.225Z",
+    "duration": -185617,
+    "status": "active",
+    "type": "completed",
+    "owner": { "id": 2, "email": "tai@coderpush.com" }
+  },
+  {
+    "id": 3,
+    "name": "Tài Vũ Anh",
+    "startPrice": 1,
+    "currentPrice": 4000,
+    "startDate": "2023-06-28T10:22:12.381Z",
+    "endDate": "2023-06-28T10:23:52.381Z",
+    "duration": -185793,
+    "status": "active",
+    "type": "completed",
+    "owner": { "id": 2, "email": "tai@coderpush.com" }
+  },
+  {
+    "id": 2,
+    "name": "Test",
+    "startPrice": 1,
+    "currentPrice": 100004,
+    "startDate": "2023-06-28T10:17:42.470Z",
+    "endDate": "2023-06-28T10:34:22.470Z",
+    "duration": -185163,
+    "status": "active",
+    "type": "published",
+    "owner": { "id": 2, "email": "tai@coderpush.com" }
+  },
+  {
+    "id": 1,
+    "name": "Test 123",
+    "startPrice": 1,
+    "currentPrice": 10010,
+    "startDate": "2023-06-28T09:58:48.726Z",
+    "endDate": "2023-06-28T10:17:08.726Z",
+    "duration": -186196,
+    "status": "active",
+    "type": "published",
+    "owner": { "id": 2, "email": "tai@coderpush.com" }
+  }
+]
