@@ -71,6 +71,7 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
       <thead>
         <tr className='bg-gray-200'>
           <th className='px-4 py-2 text-left'>Name</th>
+          <th className='px-4 py-2 text-left'>Current Owner</th>
           <th className='px-4 py-2 text-left'>Current Price</th>
           <th className='px-4 py-2 text-left'>Duration</th>
           <th className='px-4 py-2 text-left'>Action</th>
@@ -82,6 +83,7 @@ export const ListItem = ({ data, onClickBid, onClickPublish }: Props) => {
             return (
               <tr className='border-b' key={index} data-testid='item'>
                 <td className='px-4 py-2'>{item.name}</td>
+                <td className='px-4 py-2'>{item.owner.email}</td>
                 <td className='px-4 py-2'>{item.currentPrice}</td>
                 <td className='px-4 py-2'>
                   {item.type === TypeEnum.DRAFT ? (
