@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className='mx-auto container'>
           <div className='flex items-center justify-between h-16 text-white'>
             <div className='flex-shrink-0 text-4xl' data-testid='logo'>
-              VAT
+              VAT Auction
             </div>
             <div className='hidden lg:block'>
               <div className='flex items-center md:ml-6 gap-3'>
